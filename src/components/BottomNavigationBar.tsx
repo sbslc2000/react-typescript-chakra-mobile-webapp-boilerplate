@@ -65,7 +65,8 @@ export function BottomNavigationBar({navItem}: BottomNavigationBarProps) {
                 justify={'space-evenly'}
                 position={'fixed'}
                 bottom={0}
-                borderTop={'1px'}
+
+                borderTop={'1px solid'}
                 borderColor={'gray.100'}
                 zIndex={3}
             >
@@ -98,8 +99,14 @@ const NavItem = ({icon: Icon, label, focus, onClick}: NavItemProps) => {
             justify={'center'}
             color={focus ? openColor.gray[7] : openColor.gray[6]}
             p={2}
+            px={4}
             cursor={'pointer'}
             onClick={onClick}
+            _hover={{
+                backgroundColor: openColor.gray[1],
+            }}
+            transition="background-color 0.3s ease-in-out"
+            borderRadius={'xl'}
         >
             {/* 아이콘 렌더링 */}
             <Icon size={24}/>
